@@ -1,0 +1,17 @@
+{% extends 'admin/base_site.html' %}
+
+
+{% block content %}
+
+    <body>
+        <h2>Write email</h2>
+        <form action="{% url 'users:email_page' %}" method="post">
+            {% csrf_token %}
+            <textarea name="email" type="text" cols="30" rows="5" placeholder="Write here ..."></textarea>
+
+            <br><br>
+            <input type="submit" value="Send email">
+        </form>
+    </body>
+
+{% endblock content %}
